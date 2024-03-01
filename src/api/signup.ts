@@ -1,7 +1,6 @@
 import ky from 'ky';
 import {SignUpFormData} from '../features/SignUp/utils/types';
-
-const BASE_ENDPOINT = 'https://stage.valetax.com';
+import {API_URL} from '@env';
 
 export const registration = (formData: SignUpFormData) => {
   const body = {
@@ -15,7 +14,7 @@ export const registration = (formData: SignUpFormData) => {
     countryId: formData.region.id,
     schemaId: '',
   };
-  return ky.post(`${BASE_ENDPOINT}/api.user.user.register`, {
+  return ky.post(`${API_URL}/api.user.user.register`, {
     json: body,
   });
 };

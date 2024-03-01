@@ -12,8 +12,8 @@ type SnapshotResponse = {
 export const getSnapshot = () =>
   ky.post(`${API_URL}/api.guest.country.getSnapshot`).json<SnapshotResponse>();
 
-export const getFlagLogo = (id: number) =>
+export const getFlagLogo = (countryId: number) =>
   ReactNativeBlobUtil.fetch(
     'POST',
-    `${API_URL}/api.guest.country.getLogo?id=${id}`,
+    `${API_URL}/api.guest.country.getLogo?id=${countryId}`,
   );
